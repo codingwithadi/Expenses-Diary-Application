@@ -30,9 +30,9 @@ public class User {
 	private String userEmail;
 	private String userMobileNumber;
 
-	// Relationship with expenseCategory
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<ExpenseCategory> expenseCategory = new ArrayList<>();
+//	// Relationship with expenseCategory
+//	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	private List<ExpenseCategory> expenseCategory = new ArrayList<>();
 	
 	// Relationship with expenseDetails
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

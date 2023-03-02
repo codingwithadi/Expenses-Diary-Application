@@ -9,8 +9,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -30,10 +28,10 @@ public class ExpenseCategory {
 
 	private String expenseCategoryName;
 
-	// Relationship with user
-	@ManyToOne
-	@JoinColumn(name = "user_details")
-	private User user;
+//	// Relationship with user
+//	@ManyToOne
+//	@JoinColumn(name = "user_details")
+//	private User user;
 	
 	// Relationship with expenseDetails
 	@OneToMany(mappedBy = "expenseCategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
