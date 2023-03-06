@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.expenses.diary.application.dto.ExpenseCategoryDTO;
 
-public interface CategoryServices {
+public interface ExpenseCategoryServices {
 	
 	//create
 	ExpenseCategoryDTO createExpenseCategory(ExpenseCategoryDTO expenseCategoryDTO);
