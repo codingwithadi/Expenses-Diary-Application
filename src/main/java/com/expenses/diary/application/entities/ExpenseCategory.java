@@ -32,7 +32,7 @@ public class ExpenseCategory {
 //	@ManyToOne
 //	@JoinColumn(name = "user_details")
 //	private User user;
-	
+
 	// Relationship with expenseDetails
 	@OneToMany(mappedBy = "expenseCategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<ExpenseDetails> expenseDetails = new ArrayList<>();

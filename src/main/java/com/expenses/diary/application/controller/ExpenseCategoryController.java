@@ -24,48 +24,50 @@ public class ExpenseCategoryController {
 
 	@Autowired
 	private ExpenseCategoryServices expenseCategoryServices;
-	
-	//POST
+
+	// POST
 	@PostMapping("/createCategory")
-	public ResponseEntity<ExpenseCategoryDTO> createCategory(@RequestBody ExpenseCategoryDTO expenseCategoryDTO){
+	public ResponseEntity<ExpenseCategoryDTO> createCategory(@RequestBody ExpenseCategoryDTO expenseCategoryDTO) {
 		ExpenseCategoryDTO createCategory = this.expenseCategoryServices.createExpenseCategory(expenseCategoryDTO);
 		return new ResponseEntity<ExpenseCategoryDTO>(createCategory, HttpStatus.CREATED);
 	}
-	
-	//PUT
+
+	// PUT
 	@PutMapping("/{categoryId}/updateCategory")
-	public ResponseEntity<ExpenseCategoryDTO> updateCategory(@RequestBody ExpenseCategoryDTO expenseCategoryDTO, @PathVariable("categoryId") Integer categoryId){
-		ExpenseCategoryDTO updateCategory = this.expenseCategoryServices.updateExpenseCategory(expenseCategoryDTO, categoryId);
+	public ResponseEntity<ExpenseCategoryDTO> updateCategory(@RequestBody ExpenseCategoryDTO expenseCategoryDTO,
+			@PathVariable("categoryId") Integer categoryId) {
+		ExpenseCategoryDTO updateCategory = this.expenseCategoryServices.updateExpenseCategory(expenseCategoryDTO,
+				categoryId);
 		return new ResponseEntity<ExpenseCategoryDTO>(updateCategory, HttpStatus.OK);
 	}
-	
-	//GET
+
+	// GET
 	@GetMapping("/getAllCategories")
-	public ResponseEntity<List<ExpenseCategoryDTO>> getAllCategories(){
+	public ResponseEntity<List<ExpenseCategoryDTO>> getAllCategories() {
 		List<ExpenseCategoryDTO> getAll = this.expenseCategoryServices.getAllExpenseCategory();
 		return new ResponseEntity<List<ExpenseCategoryDTO>>(getAll, HttpStatus.OK);
 	}
-	
-	//GET by ID
+
+	// GET by ID
 	@GetMapping("/{categoryId}/getCategory")
-	public ResponseEntity<ExpenseCategoryDTO> getCategory(@PathVariable("categoryId") Integer categoryId){
+	public ResponseEntity<ExpenseCategoryDTO> getCategory(@PathVariable("categoryId") Integer categoryId) {
 		ExpenseCategoryDTO getCategory = this.expenseCategoryServices.getExpenseCategoryById(categoryId);
 		return new ResponseEntity<ExpenseCategoryDTO>(getCategory, HttpStatus.OK);
 	}
-	
-	//DELETE by ID
+
+	// DELETE by ID
 	@DeleteMapping("/{categoryId}/deleteCategory")
-	public ResponseEntity<APIResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId){
+	public ResponseEntity<APIResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
 		this.expenseCategoryServices.deleteExpenseCategoryById(categoryId);
 		return new ResponseEntity<APIResponse>(new APIResponse("Category Deleted Successfully!!", true), HttpStatus.OK);
 	}
-	
-	//DELETE 
+
+	// DELETE
 	@DeleteMapping("/deleteAllCategories")
-	public ResponseEntity<APIResponse> deleteAllCategories(){
+	public ResponseEntity<APIResponse> deleteAllCategories() {
 		this.expenseCategoryServices.deleteAllExpenseCategory();
-		return new ResponseEntity<APIResponse>(new APIResponse("Category Deleted Successfully!!", true), HttpStatus.OK);
+		return new ResponseEntity<APIResponse>(new APIResponse("All Categories Deleted Successfully!!", true),
+				HttpStatus.OK);
 	}
-	
-	
+
 }

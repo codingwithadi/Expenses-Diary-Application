@@ -5,23 +5,23 @@ import java.util.List;
 import com.expenses.diary.application.dto.ExpenseCategoryDTO;
 
 public interface ExpenseCategoryServices {
-	
-	//create
+
+	// create
 	ExpenseCategoryDTO createExpenseCategory(ExpenseCategoryDTO expenseCategoryDTO);
-	
-	//update
+
+	// update
 	ExpenseCategoryDTO updateExpenseCategory(ExpenseCategoryDTO expenseCategoryDTO, Integer categoryId);
-	
-	//get all
+
+	// get all
 	List<ExpenseCategoryDTO> getAllExpenseCategory();
-	
-	//get by id
+
+	// get by id
 	ExpenseCategoryDTO getExpenseCategoryById(Integer categoryId);
-	
-	//delete by id
+
+	// delete by id
 	void deleteExpenseCategoryById(Integer categoryId);
-	
-	//delete all
+
+	// delete all
 	void deleteAllExpenseCategory();
 
 }

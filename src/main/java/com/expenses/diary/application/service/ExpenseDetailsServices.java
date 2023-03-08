@@ -6,24 +6,24 @@ import com.expenses.diary.application.dto.ExpenseDetailsDTO;
 
 public interface ExpenseDetailsServices {
 
-	//create
+	// create
 	ExpenseDetailsDTO createExpenseDetails(Integer userId, Integer categoryId, ExpenseDetailsDTO expenseDetailsDTO);
-	
-	//update
-	ExpenseDetailsDTO updateExpenseDetails(ExpenseDetailsDTO expenseDetailsDTO, Integer userId);
-	
-	//get all
-	List<ExpenseDetailsDTO> getALlExpenseDetails();
-	
-	//get by user-id
-	ExpenseDetailsDTO getExpenseDetailsByUserId(ExpenseDetailsDTO expenseDetailsDTO, Integer userId);
-	
-	//get by id
-	ExpenseDetailsDTO getExpenseDetailsId(ExpenseDetailsDTO expenseDetailsDTO, Integer expenseId);
-	
-	//delete by id
+
+	// update
+	ExpenseDetailsDTO updateExpenseDetails(ExpenseDetailsDTO expenseDetailsDTO, Integer expenseId);
+
+	// get all
+	List<ExpenseDetailsDTO> getAllExpenseDetails();
+
+	// get by user-id
+	List<ExpenseDetailsDTO> getExpenseDetailsByUserId(Integer userId);
+
+	// get by id
+	ExpenseDetailsDTO getExpenseDetailsId(Integer expenseId);
+
+	// delete by id
 	void deleteExpenseDetailsById(Integer expenseId);
-	
-	//delete all
+
+	// delete all
 	void deleteAllExpenseDetails();
 }

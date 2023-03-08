@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.expenses.diary.application.utility.APIResponse;
 
-
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

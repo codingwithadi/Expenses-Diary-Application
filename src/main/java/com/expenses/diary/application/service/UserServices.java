@@ -5,22 +5,22 @@ import java.util.List;
 import com.expenses.diary.application.dto.UserDTO;
 
 public interface UserServices {
-	
-	//create
+
+	// create
 	UserDTO createUser(UserDTO userDTO);
-	
-	//update
+
+	// update
 	UserDTO updateUser(UserDTO userDTO, Integer userId);
-	
-	//get all
+
+	// get all
 	List<UserDTO> getAllUser();
-	
-	//get by id
+
+	// get by id
 	UserDTO getUserById(Integer userId);
-	
-	//delete by id
+
+	// delete by id
 	void deleteUserById(Integer userId);
-	
-	//delete all
+
+	// delete all
 	void deleteAllUser();
 }
